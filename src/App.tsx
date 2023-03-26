@@ -1,4 +1,3 @@
-import { Center, Heading } from "@chakra-ui/react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -9,6 +8,8 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import { AuthProvider } from "./store/context/AuthContext";
+import { baseUrl } from "./store/react-query/api";
+import { ServerStateProvider } from "./store/react-query/ServerStateProvider";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -18,11 +19,15 @@ const router = createBrowserRouter(
   ])
 );
 
+
+console.log(baseUrl);
 function App() {
   return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <ServerStateProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </ServerStateProvider>
   );
 }
 
