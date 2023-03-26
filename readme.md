@@ -15,7 +15,7 @@ Installation
 Clone the repository:
 
 ```bash
-git clone https://github.com/your_username/banana-flix-2.git
+git clone https://github.com/raheebwa/banana-flix-2.git
 ```
 
 Navigate to the project folder:
