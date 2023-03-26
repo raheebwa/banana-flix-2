@@ -1,11 +1,11 @@
-import { baseUrl } from ".";
+import { baseUrl } from "../..";
 
-type LoginRequest = {
+export type ILoginRequest = {
   Username: string;
   Password: string;
 };
 
-type RegisterRequest = {
+export type IRegisterRequest = {
   Username: string;
   Password: string;
   Email: string;
@@ -20,17 +20,17 @@ export interface IUser {
   __v: number;
 }
 
-export interface LoginResponse {
+export interface ILoginResponse {
   user: IUser;
   token: string;
 }
 
-export interface RegisterResponse {
+export interface IRegisterResponse {
   user: IUser;
 }
 
 // mutations
-export const postRegister = async (data: RegisterRequest) => {
+export const postRegister = async (data: IRegisterRequest) => {
   const response = await fetch(`${baseUrl}/users`, {
     method: "POST",
     headers: {
@@ -41,7 +41,7 @@ export const postRegister = async (data: RegisterRequest) => {
   return response.json();
 };
 
-export const postLogin = async (data: LoginRequest) => {
+export const postLogin = async (data: ILoginRequest) => {
   const response = await fetch(`${baseUrl}/login`, {
     method: "POST",
     headers: {

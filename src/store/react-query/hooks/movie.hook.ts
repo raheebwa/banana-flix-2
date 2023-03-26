@@ -1,4 +1,4 @@
-import { getMovies, getMovie } from "../api";
+import { getMovies, getMovie } from "../..";
 import { useQuery } from "@tanstack/react-query";
 
 export const useMovies = () => {

@@ -8,7 +8,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import { AuthProvider } from "./store/context/AuthContext";
-import { baseUrl } from "./store/react-query/api";
+import { baseUrl } from "./store";
 import { ServerStateProvider } from "./store/react-query/ServerStateProvider";
 
 const router = createBrowserRouter(

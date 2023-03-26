@@ -1,4 +1,4 @@
-import { baseUrl } from ".";
+import { baseUrl } from "../..";
 
 export interface IMovie {
   Genre: IGenre;
