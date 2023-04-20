@@ -80,7 +80,7 @@ const SignupPage = () => {
       </FormControl>
 
       <Button type="submit" mt={4} onClick={handleSubmit}>
-        Login
+        Sign Up
       </Button>
     </Box>
   );

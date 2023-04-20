@@ -46,6 +46,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (!isAuthenticated) {
       <Navigate to="/login" replace />;
     }
+    if (isAuthenticated === true) {
+      <Navigate to="/" replace />;
+    }
   }, [isAuthenticated]);
 
   return (

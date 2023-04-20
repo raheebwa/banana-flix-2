@@ -1,12 +1,16 @@
 import { Box, FormControl, Input, FormLabel, Button } from "@chakra-ui/react";
 import React from "react";
 import { ILoginRequest, useLogin } from "../store";
+import { useNavigate } from "react-router-dom";
+
 
 const LoginPage = () => {
   const { mutate: login, isLoading, error } = useLogin();
+  const navigate = useNavigate(); // useNavigate hook
 
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -16,6 +20,7 @@ const LoginPage = () => {
     };
     login(postData, {
       onSuccess: (data) => {
+        navigate("/"); // navigate to "/" after successful login
         console.log(data);
       },
     });
